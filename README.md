@@ -1,14 +1,14 @@
 # **python-api-challenge** #
 --------
 
-## Obtaining API Keys
+## Obtaining API Keys ##
 * Before you are able to run the jupyter notebook files "WeatherPy" and "VacationPy" that are located inside the folder "WeatherPy" located on the main brach of this repository. You will need to obtain two API keys that are individual to your email address (these API keys that you obtain should be kept private and should only be known by you). The way to obtain the two API keys needed to run both the files metioned above is by going onto "https://www.geoapify.com/" and "https://openweathermap.org/api", and then creating a free account. You will then get an email from both of these websites saying to you need to activate your API keys and once that is completed, you will be able to use the API keys that they have provided for you. 
 --------
 
-## WeatherPy Analysis
+## WeatherPy Analysis ##
 There was a total of eight seperate scatter plots created using linear regression analysis to show the correlation between a given cities Latitude vs the metrics of Max Temp(C), Humidity(%), Cloudiness(%), and Wind Speed(m/s) based on if that given cities was located in the northern or southern hemisphere of the world.
 
-1) Latitude vs Max Temp(C) - Northern & Southern Hemisphere
+**1) Latitude vs Max Temp(C) - Northern & Southern Hemisphere**
 
 Northern Hemisphere
 
