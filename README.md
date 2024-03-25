@@ -11,6 +11,7 @@ There was a total of eight seperate scatter plots created using linear regressio
 1) Latitude vs Max Temp(C) - Northern & Southern Hemisphere
 
 Northern Hemisphere
+
 ![Lat_vs_Temp_NH](https://github.com/nmrodio/python-api-challenge/assets/157527614/c0ab2bd0-7595-42bf-9e4b-ebe2ea7af8c9)
 
 Southern Hemisphere 
