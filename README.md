@@ -20,32 +20,38 @@ There was a total of eight seperate scatter plots created using linear regressio
 
 *  As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities maximum temperature based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities maximum temperature has a moderately strong negative correlation which implies that as the given cities latitide is located more north (increase in latitude), the maximum temperature tends to decrease. This is also show by the linear regression line that predicts that the more north a city is located (increase in latitude), the cities maximum temperature tends to decrease. The linear relationship between the latitude of cities in the southern hemisphere vs a cities maximum temperature has a weak positive correlation which implies that as a given cities latitide is located more south (decrease in latitude), the maximum temperature tends to decrease. This is also shown by the linear regression line but since its a weak correlation, the line predicts that there might be a decrease in maximum temperature as a city is located more south. Although both of these scatter plots with their respective linear regression lines show a positive and negative relationship between a cities latitude vs maximum temperature in their respective hemipsheres, the common theme is that as a city is located closer to the equator (latitude = 0), the higher the maximum temperature of that city becomes. This makes sense because the equator receives the most amount of sunlight year round which would result in higher maximum temperatures and as a cities location gets futher away from the equator either north or south, the maxiumum tempteratures of cities will start to decrease.
 
-2) Latitude vs Humidity(%) - Northern & Southern Hemisphere
+**2) Latitude vs Humidity(%) - Northern & Southern Hemisphere**
 
-Northern Hemisphere
-PUT SCREENSHOT HERE
+**Northern Hemisphere:**
 
-Southern Hemisphere
-PUT SCREENSHOT HERE
+![Screenshot 2024-03-25 191357](https://github.com/nmrodio/python-api-challenge/assets/157527614/eb3ef5c6-7fdd-4c17-8614-dc4fb58e3956)
+
+**Southern Hemisphere:**
+
+![Screenshot 2024-03-25 191707](https://github.com/nmrodio/python-api-challenge/assets/157527614/2d3c806e-fae5-4e03-8284-5c2f804d66e2)
 
 * As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities humidity based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities humidity has a weak positive correlation which implies that there is almost none to very little accociation between the two metrics of latitude vs humidity but the linear regression line does predict the more north a city is located (increase in latitude), there might be a very slight increase in humidity. The linear relationship between the latitude of cities in southern hemisphere vs a cities humidity has a very weak positive correlation, this implies that there is no association between a cities latitude vs its humidity in the southern hemisphere but the linear regression line does predict the more south a city is located (decrease in latitude), there might be a very slight increase in humidity. Although both of these scatter plots with their respective linear regression lines show a positive relationship between a cities latitude vs humidity in their respective hemipsheres, the correlations show that these metrics arent sufficent for explaining the cloudiness of a city based on a given cities latitude.
 
-3) Latitude vs Cloudiness(%) - Northern & Southern Hemisphere
+**3) Latitude vs Cloudiness(%) - Northern & Southern Hemisphere**
 
-Northern Hemisphere
-PUT SCREENSHOT HERE
+**Northern Hemisphere:**
 
-Southern Hemisphere
-PUT SCREENSHOT HERE
+![Screenshot 2024-03-25 191804](https://github.com/nmrodio/python-api-challenge/assets/157527614/71b90cf8-ceda-46c9-963e-d26dce82c2ce)
+
+**Southern Hemisphere:**
+
+![Screenshot 2024-03-25 191853](https://github.com/nmrodio/python-api-challenge/assets/157527614/e26f5caa-f015-429b-a937-eccf0dbe29f5)
 
 * As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities cloudiness based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities cloudiness has a very weak positive correlation which implies that there is no association between the two metircs of latitude vs cloudiness but the linear regression line does predict the more north a city is located (increase in latitude), there might be a very slight increase in cloudiness. The linear relationship between the latitude of cities in southern hemisphere vs a cities cloudiness also has a very weak positive correlation, this implies that there is no association between a cities latitude vs its cloudiness in the southern hemisphere but the linear regression line does predict there might be a very slight increase in cloudiness as a cities is located more south (decrease in latitude). Although both of these scatter plots with their respective linear regression lines show a positive relationship between a cities latitude vs cloudiness in their respective hemipsheres, the correlations show that these metrics arent sufficent for explaining the cloudiness of a city based on a given cities latitude.
 
-4) Latitude vs Wind Speed(m/s) - Northern & Southern Hemisphere
+**4) Latitude vs Wind Speed(m/s) - Northern & Southern Hemisphere**
 
-Northern Hemisphere
-PUT SCREENSHOT HERE
+**Northern Hemisphere:**
 
-Southern Hemisphere
-PUT SCREENSHOT HERE
+![Screenshot 2024-03-25 191952](https://github.com/nmrodio/python-api-challenge/assets/157527614/934c1fd7-3cd7-4c3a-91c4-2f013e4a3706)
+
+**Southern Hemisphere:**
+
+![Screenshot 2024-03-25 192038](https://github.com/nmrodio/python-api-challenge/assets/157527614/11f2a0ba-7570-43c7-bd31-82d464646b0b)
 
 * As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities wind speed based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities wind speed has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. The same can be seen by looking at the linear relationship between the latitude of cities in the southern hemisphere vs a cities wind speed, this relationship also has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. Although both of these scatter plots with their respective linear regression lines show a negative relationship between a cities latitude vs wind speed in their respective hemipsheres, the correlations show that these metrics arent sufficent for explaining the wind speed of a city based on a given cities latitude. 
