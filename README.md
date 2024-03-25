@@ -1,4 +1,4 @@
-# **python-api-challenge**
+# **python-api-challenge** #
 --------
 
 ## Obtaining API Keys
@@ -11,9 +11,9 @@ There was a total of eight seperate scatter plots created using linear regressio
 1) Latitude vs Max Temp(C) - Northern & Southern Hemisphere
 
 Northern Hemisphere
-PUT SCREENSHOT HERE
+![image]
 
-Southern Hemisphere
+Southern Hemisphere 
 PUT SCREENSHOT HERE
 
 *  As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities maximum temperature based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities maximum temperature has a moderately strong negative correlation which implies that as the given cities latitide is located more north (increase in latitude), the maximum temperature tends to decrease. This is also show by the linear regression line that predicts that the more north a city is located (increase in latitude), the cities maximum temperature tends to decrease. The linear relationship between the latitude of cities in the southern hemisphere vs a cities maximum temperature has a weak positive correlation which implies that as a given cities latitide is located more south (decrease in latitude), the maximum temperature tends to decrease. This is also shown by the linear regression line but since its a weak correlation, the line predicts that there might be a decrease in maximum temperature as a city is located more south. Although both of these scatter plots with their respective linear regression lines show a positive and negative relationship between a cities latitude vs maximum temperature in their respective hemipsheres, the common theme is that as a city is located closer to the equator (latitude = 0), the higher the maximum temperature of that city becomes. This makes sense because the equator receives the most amount of sunlight year round which would result in higher maximum temperatures and as a cities location gets futher away from the equator either north or south, the maxiumum tempteratures of cities will start to decrease.
