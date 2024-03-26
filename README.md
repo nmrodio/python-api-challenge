@@ -56,6 +56,11 @@ There was a total of eight seperate scatter plots created using linear regressio
 
 * As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities wind speed based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities wind speed has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. The same can be seen by looking at the linear relationship between the latitude of cities in the southern hemisphere vs a cities wind speed, this relationship also has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. Although both of these scatter plots with their respective linear regression lines show a negative relationship between a cities latitude vs wind speed in their respective hemipsheres, the correlations show that these metrics arent sufficent for explaining the wind speed of a city based on a given cities latitude.
 --------------
+## **VacationPy Maps** ##
+
+![Screenshot 2024-03-26 001257](https://github.com/nmrodio/python-api-challenge/assets/157527614/fc8f78f6-b4fb-43c3-b8a2-72b293bf4970)
+
+![Screenshot 2024-03-26 001455](https://github.com/nmrodio/python-api-challenge/assets/157527614/4c62b6df-760f-4d9c-b72b-ad838c241bc6)
 
 ## **How does the code work?** ##
 **WeatherPy:**
