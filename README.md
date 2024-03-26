@@ -62,6 +62,8 @@ There was a total of eight seperate scatter plots created using linear regressio
 
 ![Screenshot 2024-03-26 001455](https://github.com/nmrodio/python-api-challenge/assets/157527614/4c62b6df-760f-4d9c-b72b-ad838c241bc6)
 
+---------
+
 ## **How does the code work?** ##
 **WeatherPy:**
 1) Importing necessary dependencies to use later in the code (matplotlib, pandas, numpy, requests, time, scipy.stats / linregress, api_keys, citipy)
