@@ -82,8 +82,25 @@ There was a total of eight seperate scatter plots created using linear regressio
                                                                            alpha = .5              # Alpha = .5 is making the colors of the dots more transparent so they arent so opaque making it easier to see where each                                                                                                       hotel is located on the map,
                                                                             color = "City"         # Assigning different colors for each city and puts the cities as a list/legend on the right side of the map,
                                                                             frame_width = 1000     # Makes the map output larger horizontally (width) so its easier to visualization,
-                                                                            frame_height = 500)      # Makes the map output larger vertically (height) so its easier to visualization
-4) Creating a filtered dataframe called "specific_city_criteria_df" to narrow down cities to find ideal weather conditions for a vacation using the metrics of "Max Temp, "Wind Speed", and "Cloudiness" ==> Then adding the .dropna() function to drop all rows with null values to clean the dataframe
-5) Creating a new dataframe called "hotel_df" with just the columns "City, Country, Lat, Lng , and Humidity" and then creating a copy using .copy() function => Then creating an empty column in the "hotel_df" dataframe called "Hotel Name" to be used for the API request in the next cell for storing the Hotel Names that are found using the API request from "https://www.geoapify.com/"
-6) 
+                                                                            frame_height = 500      # Makes the map output larger vertically (height) so its easier to visualization
+
+5) Displaying the map "cities_worldwide_map"
+6) Creating a filtered dataframe called "specific_city_criteria_df" to narrow down cities to find ideal weather conditions for a vacation using the metrics of "Max Temp, "Wind Speed", and "Cloudiness" ==> Then adding the .dropna() function to drop all rows with null values to clean the dataframe
+7) Creating a new dataframe called "hotel_df" with just the columns "City, Country, Lat, Lng , and Humidity" and then creating a copy using .copy() function => Then creating an empty column in the "hotel_df" dataframe called "Hotel Name" to be used for the API request in the next cell for storing the Hotel Names that are found using the API request from "https://www.geoapify.com/"
+8) Next the radius and parameters where set to search for the nearest hotel - Params (categories, apiKey, and limit)
+9) A for loop was then used to find the nearest hotel based on the lat and long of the ideal vacation cities from the "hotel_df" = Two other params were added (filter & bias to find the circle proximity based on the radius that was set above in the code)
+10) The base URL was then define from "https://www.geoapify.com/" and then the end point URL was created by combining the params with the base URL to find the hotel names and then the data was converted into a .json() format - (There is a try and except compenent that allows the code to continue looping if a hotel is NOT found in the 10000 meter radius from the API call - if a hotel is not found for a given city in the "hotel_df" the code will print "No hotel found" in the "Hotel Name" column in the "hotel_df" dataframe)
+11) A final map called "hotel_vacation_map" is then created using hvplot.points using "Lng"                                  # longitude of each city,
+                                            "Lat"                                   # Latitude of each city,
+                                            geo = True                              # Turns map into a geographic map,
+                                            tiles = "OSM"                          # Defines the "tiles" ==> OSM stands for "OpenStreetMap" which gives us the intituve looking map below (white = land) & (blue = water),
+                                            size="Humidity"                         # Makes the size of the plotted dots based on the humidity of each city where the nearest hotel is located,
+                                            scale = 1.5                            # Scale = 1.5 is just increasing the size of the dots on the map for easier visualization,
+                                            alpha = .5                              # Alpha = .5 is making the colors of the dots more transparent so they arent so opaque making it easier to see where each hotel is located on the map,
+                                            color = "City"                          # Asigning different colors for each city and puts the cities as a list/legend on the right side of the map,
+                                            hover_cols=["Hotel Name","Country"]     # Defines what other infomation that should be shown when you hover over a plot on the graph, 
+                                            frame_width = 1000                      # Makes the map output larger horizontally (width) so its easier to visualization,
+                                            frame_height = 500                     # Makes the map output larger vertically (height) so its easier to visualization
+
+12) Displaying the map "hotel_vacation_map"
 
