@@ -1,11 +1,11 @@
 # **python-api-challenge** #
 --------
 
-## Obtaining API Keys ##
+## **Obtaining API Keys** ##
 * Before you are able to run the jupyter notebook files "WeatherPy" and "VacationPy" that are located inside the folder "WeatherPy" located on the main brach of this repository. You will need to obtain two API keys that are individual to your email address (these API keys that you obtain should be kept private and should only be known by you). The way to obtain the two API keys needed to run both the files metioned above is by going onto "https://www.geoapify.com/" and "https://openweathermap.org/api", and then creating a free account. You will then get an email from both of these websites saying to you need to activate your API keys and once that is completed, you will be able to use the API keys that they have provided for you. 
 --------
 
-## WeatherPy Analysis ##
+## **WeatherPy Analysis** ##
 There was a total of eight seperate scatter plots created using linear regression analysis to show the correlation between a given cities Latitude vs the metrics of Max Temp(C), Humidity(%), Cloudiness(%), and Wind Speed(m/s) based on if that given cities was located in the northern or southern hemisphere of the world.
 
 **1) Latitude vs Max Temp(C) - Northern & Southern Hemisphere**
@@ -54,4 +54,36 @@ There was a total of eight seperate scatter plots created using linear regressio
 
 ![Screenshot 2024-03-25 192038](https://github.com/nmrodio/python-api-challenge/assets/157527614/11f2a0ba-7570-43c7-bd31-82d464646b0b)
 
-* As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities wind speed based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities wind speed has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. The same can be seen by looking at the linear relationship between the latitude of cities in the southern hemisphere vs a cities wind speed, this relationship also has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. Although both of these scatter plots with their respective linear regression lines show a negative relationship between a cities latitude vs wind speed in their respective hemipsheres, the correlations show that these metrics arent sufficent for explaining the wind speed of a city based on a given cities latitude. 
+* As shown by linear regression lines plotted on the two graphs above regarding the correlation between the latitude of a given city vs the cities wind speed based on randomly generated cities located in both the northern hemisphere and southern hemisphere. The linear relationship between the latitude of cities in the northern hemisphere vs a cities wind speed has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. The same can be seen by looking at the linear relationship between the latitude of cities in the southern hemisphere vs a cities wind speed, this relationship also has a very weak negative correlation which implies that there is no association between the two metircs of latitude vs wind speed. Although both of these scatter plots with their respective linear regression lines show a negative relationship between a cities latitude vs wind speed in their respective hemipsheres, the correlations show that these metrics arent sufficent for explaining the wind speed of a city based on a given cities latitude.
+--------------
+
+## **How does the code work?** ##
+**WeatherPy:**
+1) Importing necessary dependencies to use later in the code (matplotlib, pandas, numpy, requests, time, scipy.stats / linregress, api_keys, citipy)
+2) Creating an empty lists "lat_lngs" and "cities" to hold latitude and longitude combinations and cities names respectively => Defining the ranges for lat and long ==> Randomly finding 1500 combinations of lat and longs and then zipping them together to then find the nearest city using "citypy" and then appending the lat and long combinations to "lat_lngs" and cities to "cities" lists ===> Then printing out the number of cities in the "cities" list using len() function
+3) Setting up base URL from "https://openweathermap.org/api" => Creating another empty list called "city_data" and then defining counters for the for loop
+4) Start of for loop to loop through cities and then groups cities into "groups" of 50 for logging purposes
+5) Setting up the endpoint URL to find the necessary metrics for each city and converting that data into .json() => Then pulling out only the citie metrics (latitude, longitude, max temp, humidity, cloudiness, wind speed, country, and date) from the list of dictionaries from the endpoint URL (There is a try and except compenent that allows the code to continue looping if a "nearest city" is NOT found from the API call)
+6) Appending all the metrics mentioned above into the list "city_data" => Creating a dataframe called "city_data_df" from the data in "city_data" and then dislaying the record count and dataframe
+7) Exporting the newly created dataframe into a CSV file called "cities.csv" to store the data that was pulled from the API request => Then reading that CSV file to allow for analysis purposes
+8) Then four scatter plots are created to plot the points of a cities Latitude vs Max Temp(C), Humidity(%), Cloudiness(%), and Wind Speed(m/s) respectively => (The dates are converted from "UNIX-UTC" into a more readable format such as "Year-Month-Day")
+9) A function called "linear_regress_hemis" is than created to create the linear regression line for the upcoming eight scatter plots and correlation is also calculated
+10) A new smaller dataframe is created to only include cities that are located in the Northern Hemisphere (Latitude >= 0) and the same is done for Southern Hemisphere cities (Latitude <= 0)
+11) The eight scatter plots are then created to show the correlation between a given cities Latitude vs the metrics of Max Temp(C), Humidity(%), Cloudiness(%), and Wind Speed(m/s) based on if that given cities was located in the northern or southern hemisphere of the world. (These are the screenshots that you see above)
+
+**VacationPy:**
+1) Importing necessary dependencies to use later in the code (hvplot.pands, pandas, requests, api_keys)
+2) Reading the CSV file "cities.csv" that was created and saved from "WeatherPy" code => Then displaying the dataframe
+3) Creating a map called "cities_worldwide_map" using hvplot.points using "Lng"                   # longitude of each city,
+                                                                          "Lat"                 # Latitude of each city,
+                                                                           geo = True             # Turns map into a geographic map,
+                                                                           tiles = "OSM"         # Defines the "tiles" ==> OSM stands for "OpenStreetMap" which gives us the intuitive looking map below (white = land) &                                                                                                         (blue = water),
+                                                                           size="Humidity"         # Makes the size of the plotted dots based on the humidity of each city where the nearest hotel is located,
+                                                                           alpha = .5              # Alpha = .5 is making the colors of the dots more transparent so they arent so opaque making it easier to see where each                                                                                                       hotel is located on the map,
+                                                                            color = "City"         # Assigning different colors for each city and puts the cities as a list/legend on the right side of the map,
+                                                                            frame_width = 1000     # Makes the map output larger horizontally (width) so its easier to visualization,
+                                                                            frame_height = 500)      # Makes the map output larger vertically (height) so its easier to visualization
+4) Creating a filtered dataframe called "specific_city_criteria_df" to narrow down cities to find ideal weather conditions for a vacation using the metrics of "Max Temp, "Wind Speed", and "Cloudiness" ==> Then adding the .dropna() function to drop all rows with null values to clean the dataframe
+5) Creating a new dataframe called "hotel_df" with just the columns "City, Country, Lat, Lng , and Humidity" and then creating a copy using .copy() function => Then creating an empty column in the "hotel_df" dataframe called "Hotel Name" to be used for the API request in the next cell for storing the Hotel Names that are found using the API request from "https://www.geoapify.com/"
+6) 
+
