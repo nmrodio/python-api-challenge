@@ -6,21 +6,18 @@ This project explores the intersection of geospatial data analysis and hospitali
 
 **Data Acquisition:**
 
- * **Geolocation Data:** The project utilizes the Geoapify API (https://www.geoapify.com/) to retrieve latitude coordinates for various randomly selected cities.
-* **Weather Data:** OpenWeatherMap's API (https://openweathermap.org/api) provides weather metrics including maximum temperature, humidity, cloudiness, and wind speed for these cities. Both sets of data are retrieved in JSON format.
+1) **Geolocation Data:** The project utilizes the Geoapify API (https://www.geoapify.com/) to retrieve latitude coordinates for various randomly selected cities.
+2) **Weather Data:** OpenWeatherMap's API (https://openweathermap.org/api) provides weather metrics including maximum temperature, humidity, cloudiness, and wind speed for these cities. Both sets of data are retrieved in JSON format.
 
 **Analysis:**
-
-The project investigates potential linear relationships between a city's latitude and the retrieved weather metrics. This analysis helps identify potential trends or patterns in weather patterns across different geographical locations.
+* The project investigates potential linear relationships between a city's latitude and the retrieved weather metrics. This analysis helps identify potential trends or patterns in weather patterns across different geographical locations.
 
 **Vacation Destination Recommendation:**
-
-Based on the weather data analysis, the project aims to identify cities that might be ideal vacation destinations based on user-defined criteria.
+* Based on the weather data analysis, the project aims to identify cities that might be ideal vacation destinations based on user-defined criteria.
 Utilizing another API (details to be specified), the project retrieves information on hotels located near these ideal destinations.
 
 **Output:**
-
-The final outcome is a dataframe containing details on the recommended vacation cities and their corresponding nearby hotels. This dataframe can be visualized or further analyzed to aid users in making informed vacation decisions.
+* The final outcome is a dataframe containing details on the recommended vacation cities and their corresponding nearby hotels. This dataframe can be visualized or further analyzed to aid users in making informed vacation decisions.
 
 ---------
 
