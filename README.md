@@ -2,26 +2,29 @@
 --------
 
 ## **Project Goal** ##
-This project explores the intersection of geospatial data analysis and hospitality information retrieval using public Application Programming Interfaces (APIs).
+This project explores the intersection of geospatial data analysis and hospitality information retrieval using public Application Programming Interfaces (APIs) and demonstrates the power of APIs in combining geospatial data with hospitality information to create a user-centric recommendation system.
 
-Data Acquisition:
+**Data Acquisition:**
 
-Geolocation Data: The project utilizes the Geoapify API (https://www.geoapify.com/) to retrieve latitude coordinates for various randomly selected cities.
-Weather Data: OpenWeatherMap's API (https://openweathermap.org/api) provides weather metrics including maximum temperature, humidity, cloudiness, and wind speed for these cities. Both sets of data are retrieved in JSON format.
-Analysis:
+ * **Geolocation Data:** The project utilizes the Geoapify API (https://www.geoapify.com/) to retrieve latitude coordinates for various randomly selected cities.
+* **Weather Data:** OpenWeatherMap's API (https://openweathermap.org/api) provides weather metrics including maximum temperature, humidity, cloudiness, and wind speed for these cities. Both sets of data are retrieved in JSON format.
+
+**Analysis:**
 
 The project investigates potential linear relationships between a city's latitude and the retrieved weather metrics. This analysis helps identify potential trends or patterns in weather patterns across different geographical locations.
-Vacation Destination Recommendation:
+
+**Vacation Destination Recommendation:**
 
 Based on the weather data analysis, the project aims to identify cities that might be ideal vacation destinations based on user-defined criteria.
 Utilizing another API (details to be specified), the project retrieves information on hotels located near these ideal destinations.
-Output:
+
+**Output:**
 
 The final outcome is a dataframe containing details on the recommended vacation cities and their corresponding nearby hotels. This dataframe can be visualized or further analyzed to aid users in making informed vacation decisions.
-This project demonstrates the power of APIs in combining geospatial data with hospitality information to create a user-centric recommendation system.
 
+---------
 
-##**Obtaining API Keys**##
+## **Obtaining API Keys** ##
 Before you are able to run the jupyter notebook files "WeatherPy" and "VacationPy" that are located inside the folder "WeatherPy" located on the main brach of this repository. You will need to obtain two API keys that are individual to your email address (these API keys that you obtain should be kept private and should only be known by you). The way to obtain the two API keys needed to run both the files metioned above is by going onto "https://www.geoapify.com/" and "https://openweathermap.org/api", and then creating a free account. You will then get an email from both of these websites saying to you need to activate your API keys and once that is completed, you will be able to use the API keys that they have provided for you. 
 
 --------
