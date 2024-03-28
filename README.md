@@ -6,15 +6,15 @@ This project explores the intersection of geospatial data analysis and hospitali
 
 **Data Acquisition:**
 
-1) **Geolocation Data:** The project utilizes the Geoapify API (https://www.geoapify.com/) to retrieve latitude coordinates for various randomly selected cities.
-2) **Weather Data:** OpenWeatherMap's API (https://openweathermap.org/api) provides weather metrics including maximum temperature, humidity, cloudiness, and wind speed for these cities. Both sets of data are retrieved in JSON format.
+1) **Geolocation Data:** The project utilizes the Geoapify API (https://www.geoapify.com/) to retrieve hotel names based on coordinates for various selected cities.
+2) **Weather Data:** OpenWeatherMap's API (https://openweathermap.org/api) provides weather metrics including maximum temperature, humidity, cloudiness, and wind speed for randomly selected cities. Both sets of data are retrieved in JSON format.
 
 **Analysis:**
 * The project investigates potential linear relationships between a city's latitude and the retrieved weather metrics. This analysis helps identify potential trends or patterns in weather patterns across different geographical locations.
 
 **Vacation Destination Recommendation:**
 * Based on the weather data analysis, the project aims to identify cities that might be ideal vacation destinations based on user-defined criteria.
-Utilizing another API (details to be specified), the project retrieves information on hotels located near these ideal destinations.
+Utilizing Geoapify API, the project retrieves information on hotels located near these ideal destinations.
 
 **Output:**
 * The final outcome is a dataframe containing details on the recommended vacation cities and their corresponding nearby hotels. This dataframe can be visualized or further analyzed to aid users in making informed vacation decisions.
@@ -87,11 +87,11 @@ There was a total of eight seperate scatter plots created using linear regressio
 
 ## **How does the code work?** ##
 **WeatherPy:**
-1) Importing necessary dependencies to use later in the code (matplotlib, pandas, numpy, requests, time, scipy.stats / linregress, api_keys, citipy)
-2) Creating an empty lists "lat_lngs" and "cities" to hold latitude and longitude combinations and cities names respectively => Defining the ranges for lat and long ==> Randomly finding 1500 combinations of lat and longs and then zipping them together to then find the nearest city using "citypy" and then appending the lat and long combinations to "lat_lngs" and cities to "cities" lists ===> Then printing out the number of cities in the "cities" list using len() function
+1) Importing necessary dependencies to use later in the code (matplotlib, pandas, numpy, requests, time, scipy.stats/linregress, api_keys, citipy)
+2) Creating an empty lists "lat_lngs" and "cities" to hold latitude and longitude combinations and a cities names respectively => Defining the ranges for lat and long ==> Randomly finding 1500 combinations of lat and longs and then zipping them together to then find the nearest city using "citypy" and then appending the lat and long combinations to "lat_lngs" and cities to "cities" lists ===> Then printing out the number of cities in the "cities" list using len() function
 3) Setting up base URL from "https://openweathermap.org/api" => Creating another empty list called "city_data" and then defining counters for the for loop
 4) Start of for loop to loop through cities and then groups cities into "groups" of 50 for logging purposes
-5) Setting up the endpoint URL to find the necessary metrics for each city and converting that data into .json() => Then pulling out only the citie metrics (latitude, longitude, max temp, humidity, cloudiness, wind speed, country, and date) from the list of dictionaries from the endpoint URL (There is a try and except compenent that allows the code to continue looping if a "nearest city" is NOT found from the API call)
+5) Setting up the endpoint URL to find the necessary metrics for each city and converting that data into .json() => Then pulling out only the citie metrics (latitude, longitude, max temp, humidity, cloudiness, wind speed, country, and date) from the list of dictionaries from the endpoint URL (There is a try and except compenent that allows the code to continue looping if a "nearest city" is NOT found from the API request)
 6) Appending all the metrics mentioned above into the list "city_data" => Creating a dataframe called "city_data_df" from the data in "city_data" and then dislaying the record count and dataframe
 7) Exporting the newly created dataframe into a CSV file called "cities.csv" to store the data that was pulled from the API request => Then reading that CSV file to allow for analysis purposes
 8) Then four scatter plots are created to plot the points of a cities Latitude vs Max Temp(C), Humidity(%), Cloudiness(%), and Wind Speed(m/s) respectively => (The dates are converted from "UNIX-UTC" into a more readable format such as "Year-Month-Day")
@@ -117,7 +117,7 @@ There was a total of eight seperate scatter plots created using linear regressio
 7) Creating a new dataframe called "hotel_df" with just the columns "City, Country, Lat, Lng , and Humidity" and then creating a copy using .copy() function => Then creating an empty column in the "hotel_df" dataframe called "Hotel Name" to be used for the API request in the next cell for storing the Hotel Names that are found using the API request from "https://www.geoapify.com/"
 8) Next the radius and parameters where set to search for the nearest hotel - Params (categories, apiKey, and limit)
 9) A for loop was then used to find the nearest hotel based on the lat and long of the ideal vacation cities from the "hotel_df" = Two other params were added (filter & bias to find the circle proximity based on the radius that was set above in the code)
-10) The base URL was then define from "https://www.geoapify.com/" and then the end point URL was created by combining the params with the base URL to find the hotel names and then the data was converted into a .json() format - (There is a try and except compenent that allows the code to continue looping if a hotel is NOT found in the 10000 meter radius from the API call - if a hotel is not found for a given city in the "hotel_df" the code will print "No hotel found" in the "Hotel Name" column in the "hotel_df" dataframe)
+10) The base URL was then define from "https://www.geoapify.com/" and then the end point URL was created by combining the params with the base URL to find the hotel names and then the data was converted into a .json() format - (There is a try and except compenent that allows the code to continue looping if a hotel is NOT found in the 10,000 meter radius from the API request - if a hotel is not found for a given city in the "hotel_df" the code will print "No hotel found" in the "Hotel Name" column in the "hotel_df" dataframe)
 11) A final map called "hotel_vacation_map" is then created using hvplot.points using "Lng"                                  # longitude of each city,
                                             "Lat"                                   # Latitude of each city,
                                             geo = True                              # Turns map into a geographic map,
